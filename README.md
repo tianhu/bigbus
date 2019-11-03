@@ -1,3 +1,7 @@
+This guide can help you setup a OpenConnect VPN server (OCServ) on Ubuntu 1804.
+
+# Chapter 1 Set up a VPN server
+
 ## Install OpenConnect VPN server
 
 ```
@@ -32,24 +36,24 @@ sudo crontab -e
 sudo vi /etc/ocserv/ocserv.conf
 ```
 
-> tcp-port = 443
-> #udp-port = 443
-> server-cert = /etc/letsencrypt/live/citytiger.com/fullchain.pem
-> server-key = /etc/letsencrypt/live/citytiger.com/privkey.pem
-> max-clients = 0
-> max-same-clients = 0
-> try-mtu-discovery = true
-> default-domain = citytiger.com
-> ipv4-network = 192.168.50.0
-> ipv4-netmask = 255.255.255.0
-> tunnel-all-dns = true
-> dns = 8.8.8.8
-> dns = 8.8.4.4
-> #route = 10.10.10.0/255.255.255.0
-> #route = 192.168.0.0/255.255.0.0
-> #route = fef4:db8:1000:1001::/64
-> #route = default
-> #no-route = 192.168.5.0/255.255.255.0
+> `tcp-port = 443`
+> `#udp-port = 443`
+> `server-cert = /etc/letsencrypt/live/citytiger.com/fullchain.pem`
+> `server-key = /etc/letsencrypt/live/citytiger.com/privkey.pem`
+> `max-clients = 0`
+> `max-same-clients = 0`
+> `try-mtu-discovery = true`
+> `default-domain = citytiger.com`
+> `ipv4-network = 192.168.50.0`
+> `ipv4-netmask = 255.255.255.0`
+> `tunnel-all-dns = true`
+> `dns = 8.8.8.8`
+> `dns = 8.8.4.4`
+> `#route = 10.10.10.0/255.255.255.0`
+> `#route = 192.168.0.0/255.255.0.0`
+> `#route = fef4:db8:1000:1001::/64`
+> `#route = default`
+> `#no-route = 192.168.5.0/255.255.255.0`
 
 ```
 sudo systemctl restart ocserv
@@ -74,8 +78,9 @@ sudo apt install iptables-persistent
 ```
 
 
-## Client
+# Chapter 2 Set up Clients
 
+## Linux client
 ```
 sudo apt install openconnect network-manager-openconnect network-manager-openconnect-gnome
 sudo openconnect -b citytiger.com
@@ -83,3 +88,15 @@ sudo openconnect -b citytiger.com
 
 To stop the connection, run:
 > `sudo pkill openconnect`
+
+## Windows. Mac
+
+You have 3 options. I recommand choosing option 3, openconnect-gui.
+
+* Use the system built-in Cisco VPN provider.
+* Install Cisco AnyConnect.
+* Install openconnect-gui from https://github.com/openconnect/openconnect-gui/releases
+
+## Android, iOS
+
+Install Cisco AnyConnect from the App Store.
