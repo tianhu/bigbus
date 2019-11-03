@@ -70,8 +70,11 @@ sudo passwd <username>
 
 ```
 sudo vi /etc/sysctl.conf
+```
+
 > `net.ipv4.ip_forward = 1`
 
+```
 sudo sysctl -p
 sudo iptables -t nat -A POSTROUTING -s 192.168.50.0/24 -o eth0 -j MASQUERADE
 sudo apt install iptables-persistent
@@ -83,11 +86,11 @@ sudo apt install iptables-persistent
 ## Linux client
 ```
 sudo apt install openconnect network-manager-openconnect network-manager-openconnect-gnome
-sudo openconnect -b citytiger.com
 ```
-
-To stop the connection, run:
-> `sudo pkill openconnect`
+> Use network manager GUI or run below command line.
+>> `sudo openconnect -b citytiger.com`
+>> To stop the connection, run:
+>> `sudo pkill openconnect`
 
 ## Windows. Mac
 
