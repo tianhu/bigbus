@@ -18,7 +18,7 @@ sudo apt install certbot
 ## Obtain certificate
 
 ```
-sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email <your-email> -d <your-domain>
+sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email <your-email> -d <your-vpn-domain>
 ```
 
 ## Auto-Renew Let’s Encrypt Certificate
@@ -36,24 +36,24 @@ sudo crontab -e
 sudo vi /etc/ocserv/ocserv.conf
 
 
-> `tcp-port = 443`
-> `#udp-port = 443`
-> `server-cert = /etc/letsencrypt/live/citytiger.com/fullchain.pem`
-> `server-key = /etc/letsencrypt/live/citytiger.com/privkey.pem`
-> `max-clients = 0`
-> `max-same-clients = 0`
-> `try-mtu-discovery = true`
-> `default-domain = citytiger.com`
-> `ipv4-network = 192.168.50.0`
-> `ipv4-netmask = 255.255.255.0`
-> `tunnel-all-dns = true`
-> `dns = 8.8.8.8`
-> `dns = 8.8.4.4`
-> `#route = 10.10.10.0/255.255.255.0`
-> `#route = 192.168.0.0/255.255.0.0`
-> `#route = fef4:db8:1000:1001::/64`
-> `#route = default`
-> `#no-route = 192.168.5.0/255.255.255.0`
+tcp-port = 443
+#udp-port = 443
+server-cert = /etc/letsencrypt/live/<your-vpn-domain>/fullchain.pem
+server-key = /etc/letsencrypt/live/<your-vpn-domain>/privkey.pem
+max-clients = 0
+max-same-clients = 0
+try-mtu-discovery = true
+default-domain = <your-vpn-domain>
+ipv4-network = 192.168.50.0
+ipv4-netmask = 255.255.255.0
+tunnel-all-dns = true
+dns = 8.8.8.8
+dns = 8.8.4.4
+#route = 10.10.10.0/255.255.255.0
+#route = 192.168.0.0/255.255.0.0
+#route = fef4:db8:1000:1001::/64
+#route = default
+#no-route = 192.168.5.0/255.255.255.0
 
 
 sudo systemctl restart ocserv
