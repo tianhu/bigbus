@@ -34,7 +34,7 @@ sudo crontab -e
 
 ```
 sudo vi /etc/ocserv/ocserv.conf
-```
+
 
 > `tcp-port = 443`
 > `#udp-port = 443`
@@ -55,7 +55,7 @@ sudo vi /etc/ocserv/ocserv.conf
 > `#route = default`
 > `#no-route = 192.168.5.0/255.255.255.0`
 
-```
+
 sudo systemctl restart ocserv
 ```
 
@@ -88,7 +88,7 @@ sudo apt install iptables-persistent
 sudo apt install openconnect network-manager-openconnect network-manager-openconnect-gnome
 ```
 > Use network manager GUI or run below command line.
->> `sudo openconnect -b citytiger.com`
+>> `sudo openconnect -b <your-vpn-domain>`
 >> To stop the connection, run:
 >> `sudo pkill openconnect`
 
