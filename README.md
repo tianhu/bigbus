@@ -2,7 +2,7 @@ This guide can help you setup a OpenConnect VPN server (OCServ) on Ubuntu 1804.
 
 # Chapter 1 Set up a VPN server
 
-## Install OpenConnect VPN server
+## Install OCServ
 
 ```
 sudo apt install ocserv
@@ -92,9 +92,9 @@ sudo apt install openconnect network-manager-openconnect network-manager-opencon
 >> To stop the connection, run:
 >> `sudo pkill openconnect`
 
-## Windows. Mac
+## Windows, Mac
 
-You have 3 options. I recommand choosing option 3, openconnect-gui.
+You have 3 options below. I strongly recommend choosing option 3, openconnect-gui, an opensource alternative to Cisco AnyConnect.
 
 * Use the system built-in Cisco VPN provider.
 * Install Cisco AnyConnect.
@@ -102,4 +102,4 @@ You have 3 options. I recommand choosing option 3, openconnect-gui.
 
 ## Android, iOS
 
-Install Cisco AnyConnect from the App Store.
+Install Cisco AnyConnect from their App Store.
