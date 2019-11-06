@@ -1,3 +1,4 @@
+![picture](cisco-anyconnect-icon.png)
 This guide can help you setup a OpenConnect VPN server (OCServ) on Ubuntu 1804.
 
 # Chapter 1 Set up a VPN server
