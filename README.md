@@ -44,7 +44,7 @@ sudo vi /etc/ocserv/ocserv.conf
 > * max-clients = 0
 > * max-same-clients = 0
 > * try-mtu-discovery = true
-> * default-domain = <your-vpn-domain>
+> * default-domain = your-vpn-domain
 > * ipv4-network = 192.168.50.0
 > * ipv4-netmask = 255.255.255.0
 > * tunnel-all-dns = true
@@ -56,6 +56,14 @@ sudo vi /etc/ocserv/ocserv.conf
 > * #route = default
 > * #no-route = 192.168.5.0/255.255.255.0
 
+  `
+#route = 10.0.0.0/8
+#route = 172.16.0.0/12
+#route = 192.168.0.0/16
+#route = fd00::/8
+#route = default
+`
+  
 ```
 sudo systemctl restart ocserv
 ```
